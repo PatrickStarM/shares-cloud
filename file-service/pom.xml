@@ -11,8 +11,8 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.mth.gateway</groupId>
-    <artifactId>gateway-service</artifactId>
+    <groupId>com.mth.file</groupId>
+    <artifactId>file-service</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -28,14 +28,23 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!--        引入 gateway 组件-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-gateway</artifactId>
-            <version>${component.version}</version>
+            <artifactId>spring-cloud-dependencies</artifactId>
+            <type>pom</type>
+            <scope>import</scope>
+            <version>${spring.cloud.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+            <type>pom</type>
+            <scope>import</scope>
+            <version>${spring.cloud.alibaba.version}</version>
         </dependency>
 
         <dependency>
@@ -72,11 +81,13 @@
             <optional>true</optional>
         </dependency>
 
+<!--        minio-->
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.75</version>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+            <version>7.1.0</version>
         </dependency>
+
     </dependencies>
 
     <build>

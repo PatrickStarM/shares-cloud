@@ -1,0 +1,17 @@
+server:
+  port: 9084
+
+minio:
+  endPoint: http://www.patrickstarm.top:9090
+  accessKey: patrickstarm
+  secretKey: matianhao.513
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        heart-beat-interval: 5000
+        heart-beat-timeout: 20000
+        namespace: fab1b634-963d-4b61-87bd-0a14aeeb6be2
+        register-enabled: true
