@@ -1,0 +1,30 @@
+server:
+  port: 9088
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: user-service
+          predicates:
+            - Path=/users/**
+          uri: http://localhost:9081
+        - id: content-service
+          predicates:
+            - Path=/shares/**
+          uri: http://localhost:9082
+        - id: notice-service
+          predicates:
+            - Path=/notices/latest
+          uri: http://localhost:9083
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: fab1b634-963d-4b61-87bd-0a14aeeb6be2
+      password: nacos
+      username: nacos
