@@ -1,0 +1,63 @@
+server:
+  port: 9082
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        heart-beat-interval: 5000
+        heart-beat-timeout: 20000
+        namespace: fab1b634-963d-4b61-87bd-0a14aeeb6be2
+        register-enabled: true
+
+#logging:
+#  level:
+#    com.mth.content.openfeign.UserService: debug
+
+#spring:
+#  sleuth:
+#    sampler:
+#      probability: 1.0
+#      rate: 1000
+#  zipkin:
+#    sender:
+#      type: rabbit
+#    rabbitmq:
+#      addresses: localhost:5672
+#      queue: zipkin
+
+#spring:
+#  application:
+#    name: content-drt
+#  jackson:
+#    date-format: yyyy-MM-dd HH:mm:ss
+#    timezone: GMT+8
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: localhost:8848
+#      username: nacos
+#      password: nacos
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/share?serverTimezone=Asia/Shanghai&characterEncoding=utf-8
+#    hikari:
+#      username: root
+#      password: root
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+
+#feign:
+#  client:
+#    config:
+#      # 全局超时配置
+#      default:
+#        #网络连接阶段1秒延时
+#        connectTimeout: 1000
+#        #服务请求响应阶段5秒延时
+#        readTimeout: 5000
+#      # 针对某个特定服务的超时配置
+#      user-service:
+#        connectTimeout: 1000
+#        readTimeout: 2000
+#  circuitbreaker:
+#    enabled: true

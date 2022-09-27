@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: content-service
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        file-extension: yml
+        namespace: fab1b634-963d-4b61-87bd-0a14aeeb6be2
+        group: DEFAULT_GROUP
+        timeout: 5000
+        config-long-poll-timeout: 10000
+        config-retry-time: 2000
+        max-retry: 3
+        refresh-enabled: true
+
+#  datasource:
+#    ds1:
+#      nacos:
+#        username: nacos
+#        password: nacos
+#        server-addr: localhost:8848
+#    sentinel:
+#      transport:
+#        port: 8719
+#        dashboard: localhost:9090
+#      web-context-unify: false
