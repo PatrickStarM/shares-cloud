@@ -1,0 +1,42 @@
+server:
+  port: 9083
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        heart-beat-interval: 5000
+        heart-beat-timeout: 20000
+        namespace: fab1b634-963d-4b61-87bd-0a14aeeb6be2
+        register-enabled: true
+
+#spring:
+#  sleuth:
+#    sampler:
+#      probability: 1.0
+#      rate: 1000
+#  zipkin:
+#    sender:
+#      type: rabbit
+#    rabbitmq:
+#      addresses: localhost:5672
+#      queue: zipkin
+#spring:
+#  application:
+#    name: user-service
+#  jackson:
+#    date-format: yyyy-MM-dd HH:mm:ss
+#    timezone: GMT+8
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: localhost:8848
+#      username: nacos
+#      password: nacos
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/share?serverTimezone=Asia/Shanghai&characterEncoding=utf-8
+#    hikari:
+#      username: root
+#      password: root
+#      driver-class-name: com.mysql.cj.jdbc.Driver
